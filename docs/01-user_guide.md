@@ -22,8 +22,10 @@ Verify the installation:
 
 ```sh
 $ og --version
+```
 
 Note: The first start of the command takes a bit longer than subsequent starts, as it initially installs an Erlang runtime environment on your system.
+
 
 ## Setting up a new repository
 
