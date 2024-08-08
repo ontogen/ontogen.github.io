@@ -1,4 +1,6 @@
 main:
+  - title: "User Guide"
+    url: /docs/user-guide
   - title: "Blog"
     url: /blog/
   - title: "GitHub"
