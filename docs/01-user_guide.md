@@ -9,34 +9,19 @@ toc_sticky: true
 ---
 ## Installation
 
-### macOS
+Precompiled binaries for macOS and Linux are available in the [Ontogen CLI GitHub repository](https://github.com/ontogen/cli/tree/main/burrito_out/).
 
-On macOS, the Ontogen CLI `og` can be installed using Homebrew:
+To install:
 
-```sh
-$ brew install ontogen/tap/ontogen
-```
+1. Download the appropriate binary for your system.
+2. Rename the downloaded file to `og`.
+3. Make the file executable: `chmod +x og`
+4. Move it to a directory in your PATH, e.g., `/usr/local/bin` or `~/bin`.
 
-### Manual installation
-
-For Linux and Windows or for manual installation on macOS, precompiled binaries are available on the [GitHub Releases page](https://github.com/ontogen/ontogen_cli/releases). Follow these steps for manual installation:
-
-1. Download the appropriate binary for your operating system from the Releases page.
-2. Move the binary to a directory in your system PATH. For example:
-   - On Linux/macOS: `/usr/local/bin` or `~/bin`
-   - On Windows: Create a new folder (e.g., `C:\Ontogen`) and add this path to your system PATH variable.
-3. Make the binary executable (Linux/macOS only):
-   ```sh
-   $ chmod +x /path/to/og
-   ```
-
-### Verifying the installation
-
-After installation, you can check if the CLI is correctly installed with the following command:
+Verify the installation:
 
 ```sh
 $ og --version
-```
 
 Note: The first start of the command takes a bit longer than subsequent starts, as it initially installs an Erlang runtime environment on your system.
 
