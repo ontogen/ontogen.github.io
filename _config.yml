@@ -1,5 +1,7 @@
 remote_theme: mmistakes/minimal-mistakes
 
+minimal_mistakes_skin: "default"
+
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
@@ -14,25 +16,64 @@ kramdown:
   hard_wrap: false
 
 title: "Ontogen"
+title_separator: "|"
 description: >-
-  A data-control-management system for RDF datasets
+  "A Version Control System for RDF datasets"
+logo: "/assets/images/ontogen-logo.png"
 url: "https://ontogen.io"
 baseurl: ""
 name: "Marcel Otto"
 email: marcelotto@gmx.de
-title_separator: "|"
+copyright: "Marcel Otto"
+copyright_url: "http://marcelotto.net"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      toc: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
+
+enable_copy_code_button: true
 
 footer:
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/ontogen"
+      target: _blank
     - label: "Mastodon"
       icon: "fab fa-fw fa-mastodon"
       url: "https://mastodon.social/@marcelotto"
-    - label: "X"
-      icon: "fab fa-fw fa-twitter"
+      target: _blank
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
       url: "https://twitter.com/marcelotto"
+      target: _blank
+
+author:
+  name: "Marcel Otto"
+  avatar: "/assets/images/marcel-otto.jpeg"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/marcelotto"
+      target: _blank
+    - label: "Mastodon"
+      icon: "fab fa-fw fa-mastodon"
+      url: "https://mastodon.social/@marcelotto"
+      target: _blank
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/marcelotto"
+      target: _blank
 
 exclude:
   - .sass-cache/
