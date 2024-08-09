@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:bog="https://w3id.org/bog#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:NamedIndividual rdf:about="https://w3id.org/bog#I">
+    <rdfs:comment>This resource will be resolved by the precompiler to `[a og:Agent ; bog:ref "agent"]`</rdfs:comment>
+  </owl:NamedIndividual>
+  <rdfs:Class rdf:about="https://w3id.org/bog#Referencable">
+    <rdfs:comment>A thing that can be referenced via auto-generated UUIDv5-hashed HMAC-SHA256 hashed UUID-URN-URIs or anonymously via local names or indexicals.</rdfs:comment>
+    <rdfs:label>Referencable</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/bog#ref">
+    <rdfs:comment>A local name a user can use on his machine to reference a resource. These names are always rendered/skolemized to the UUIDv5 URI of the og:refHash</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/bog#Referencable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/bog#refHash">
+    <rdfs:domain rdf:resource="https://w3id.org/bog#Referencable"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/bog#this">
+    <rdfs:comment>This property is intended to have RDFS classes as its range. However, to maintain compatibility with various OWL profiles, we deliberately omit a formal rdfs:range definition.</rdfs:comment>
+    <rdfs:comment>This property will be resolved by the precompiler to `a {class} ; bog:ref {lower-cased(class)}`</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/bog#Referencable"/>
+  </rdf:Property>
+</rdf:RDF>

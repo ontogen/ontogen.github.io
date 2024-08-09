@@ -1,0 +1,85 @@
+[
+  {
+    "@id": "https://w3id.org/bog#I",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#NamedIndividual"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This resource will be resolved by the precompiler to `[a og:Agent ; bog:ref \"agent\"]`"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/bog#Referencable",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A thing that can be referenced via auto-generated UUIDv5-hashed HMAC-SHA256 hashed UUID-URN-URIs or anonymously via local names or indexicals."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Referencable"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/bog#ref",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A local name a user can use on his machine to reference a resource. These names are always rendered/skolemized to the UUIDv5 URI of the og:refHash"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bog#Referencable"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/bog#refHash",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bog#Referencable"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/bog#this",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "This property is intended to have RDFS classes as its range. However, to maintain compatibility with various OWL profiles, we deliberately omit a formal rdfs:range definition."
+      },
+      {
+        "@value": "This property will be resolved by the precompiler to `a {class} ; bog:ref {lower-cased(class)}`"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/bog#Referencable"
+      }
+    ]
+  }
+]

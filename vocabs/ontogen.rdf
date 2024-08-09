@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:dcat="http://www.w3.org/ns/dcat#" xmlns:dct="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:og="https://w3id.org/ontogen#" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:rtc="https://w3id.org/rtc#" xmlns:skos="http://www.w3.org/2004/02/skos/core#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="https://w3id.org/ontogen#Overwrite">
+    <rdfs:comment>Graph name for overwrites in a RDF encoded changeset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#speechAct">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#serviceStore">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Service"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Proposition">
+    <rdfs:comment>Represents an immutable, abstract set of RDF statements in canonical form with a content-hashed identifier</rdfs:comment>
+    <rdfs:label>Proposition</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/rtc#Compound"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Repository">
+    <rdfs:comment>Represents an Ontogen repository, which is a DCAT catalog containing three components: 1) the version-controlled dataset, 2) the history graph, and 3) an implicit metadata graph. The metadata graph contains the DCAT catalog description of the repository itself, including descriptions of the dataset and history graphs.</rdfs:comment>
+    <rdfs:label>Repository</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Catalog"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeUpdateEndpoint">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#commitMessage">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#parentCommit">
+    <rdfs:comment>Identifies the immediate predecessor commit in the version history. This property is used to construct the commit graph and trace the evolution of the repository.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/ontogen#childCommit"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#speaker">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:comment>Identifies the agent who made the speech act. This could be a person, organization, or software agent responsible for asserting the statements in the speech act.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://purl.org/dc/terms/creator"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committedUpdate">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeEndpointDataset">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Agent">
+    <rdfs:comment>A user agent operating a og:Service, i.e. running operations like og:Commits on a og:Repository.</rdfs:comment>
+    <rdfs:label>Agent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+    <rdfs:subClassOf rdf:resource="http://xmlns.com/foaf/0.1/Agent"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeQueryEndpoint">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Commit">
+    <rdfs:comment>Represents set of changes made to a repository. A commit encapsulates the effective changes resulting from applying a SpeechAct to the current state of the repository.</rdfs:comment>
+    <rdfs:label>Commit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committedRemove">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeGraphStoreEndpoint">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#add">
+    <rdfs:comment>The proposition of a speech act that is to be interpreted as a pure insert without any overwrites.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:label>add</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#update">
+    <rdfs:comment>The proposition of a speech act, that is to be interpreted as a insert action overwriting, i.e. deleting all statements with the same subject and predicate.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:label>update</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#revertedBaseCommit">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Revert"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Commit"/>
+  </rdf:Property>
+  <owl:Restriction rdf:nodeID="b4dd030da19704e99b94c4881e5f9f697">
+    <owl:hasValue rdf:resource="https://w3id.org/ontogen#CommitRoot"/>
+    <owl:onProperty rdf:resource="https://w3id.org/ontogen#parentCommit"/>
+  </owl:Restriction>
+  <rdf:Description rdf:about="https://w3id.org/ontogen#Addition">
+    <rdfs:comment>Graph name for additions in a RDF encoded changeset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ontogen#Removal">
+    <rdfs:comment>Graph name for removals in a RDF encoded changeset</rdfs:comment>
+  </rdf:Description>
+  <owl:NamedIndividual rdf:about="https://w3id.org/ontogen#CommitRoot">
+    <rdf:type rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:comment>Sentinel node for the og:parentCommit chain</rdfs:comment>
+  </owl:NamedIndividual>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#serviceOperator">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Service"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Agent"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committedReplace">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Service">
+    <rdfs:comment>Represents an operational instance of Ontogen. An og:Service is a composition of an og:Repository and an og:Store, providing versioning and access capabilities for RDF datasets.</rdfs:comment>
+    <rdfs:label>Service</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#DataService"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#serviceRepository">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Service"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Repository"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/dcat#servesDataset"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committedAdd">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Store">
+    <rdfs:label>Store</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committer">
+    <rdfs:comment>Identifies the agent responsible for creating the commit. This may be different from the speaker of the associated SpeechAct.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeEndpointScheme">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeEndpointPort">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#revertedTargetCommit">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Revert"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Commit"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#childCommit">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/ontogen#parentCommit"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#remove">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#committedOverwrite">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Commit"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#repositoryDataset">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Repository"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Dataset"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/dcat#dataset"/>
+  </rdf:Property>
+  <owl:Class rdf:about="https://w3id.org/ontogen#RootCommit">
+    <rdfs:subClassOf rdf:nodeID="b4dd030da19704e99b94c4881e5f9f697"/>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ontogen#Commit"/>
+  </owl:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#email">
+    <rdfs:comment>A unique email address of an og:Agent, that is used within Ontogen as the agents current email address, for example in the display of commit histories or in authentication or authorization processes.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Agent"/>
+    <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/mbox"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#replace">
+    <rdfs:comment>The proposition of a speech act, that is to be interpreted as a insert action overwriting, i.e. deleting all statements with the same subject.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:label>replace</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Proposition"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Revert">
+    <rdfs:label>Revert commit</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ontogen#Commit"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeEndpointUserInfo">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#SpeechAct">
+    <rdfs:comment>The utterance of a potentially complex act of propositions with different change semantics.</rdfs:comment>
+    <rdfs:label>SpeechAct</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#storeEndpointHost">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Store"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#History">
+    <rdfs:comment>Represents the provenance history graph of an Ontogen repository. It contains all SpeechActs and Commits that have led to the current state of the dataset.</rdfs:comment>
+    <rdfs:label>History</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Bundle"/>
+  </rdfs:Class>
+  <rdf:Description rdf:about="https://w3id.org/ontogen#Update">
+    <rdfs:comment>Graph name for updates in a RDF encoded changeset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/ontogen#Replacement">
+    <rdfs:comment>Graph name for replacements in a RDF encoded changeset</rdfs:comment>
+  </rdf:Description>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#repositoryHistory">
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Repository"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#History"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/dcat#dataset"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#dataSource">
+    <rdfs:comment>Specifies the dataset from which the statements in this speech act originated. This property is particularly useful for tracking the provenance of imported or derived data.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#SpeechAct"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Property>
+  <rdf:Property rdf:about="https://w3id.org/ontogen#head">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/ontogen#Repository"/>
+    <rdfs:range rdf:resource="https://w3id.org/ontogen#Commit"/>
+  </rdf:Property>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen#Dataset">
+    <rdfs:comment>Represents the version-controlled RDF dataset within an Ontogen repository. It contains the actual data being managed and versioned by Ontogen.</rdfs:comment>
+    <rdfs:label>Dataset</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/dcat#Dataset"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdfs:Class>
+</rdf:RDF>
