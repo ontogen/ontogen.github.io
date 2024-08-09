@@ -9,18 +9,30 @@ toc_sticky: true
 ---
 ## Installation
 
-Precompiled binaries for macOS and Linux are available in the [Ontogen CLI GitHub repository](https://github.com/ontogen/cli/tree/main/burrito_out/).
+### Homebrew
+  
+On macOS and Linux, the Ontogen CLI `og` can be installed using Homebrew:  
+  
+```sh  
+$ brew install ontogen/tap/ontogen  
+```  
+  
+### Manual installation  
 
-To install:
+Precompiled binaries for macOS, Linux and Windows are available in the [GitHub Releases page](https://github.com/ontogen/cli/releases)
+
+For manual installation:
 
 1. Download the appropriate binary for your system.
 2. Rename the downloaded file to `og`.
 3. Make the file executable: `chmod +x og`
 4. Move it to a directory in your PATH, e.g., `/usr/local/bin` or `~/bin`.
 
-Verify the installation:
-
-```sh
+### Verifying the installation  
+  
+After installation, you can check if the CLI is correctly installed with the following command:  
+  
+```sh  
 $ og --version
 ```
 
