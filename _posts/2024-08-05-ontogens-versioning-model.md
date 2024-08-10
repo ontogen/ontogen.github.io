@@ -1,5 +1,5 @@
 ---
-title: Ontogens Versioning Model
+title: Ontogen's Versioning Model
 date: 2024-08-08 11:00:00 +0200
 categories: [introduction, blog]
 permalink: /introduction/part-2
