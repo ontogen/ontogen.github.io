@@ -1,0 +1,23 @@
+{% if page.mermaid %}
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', async function () {
+    const config = {
+      startOnLoad: false,
+      theme: '{{ page.mermaid_theme | default: "default" }}',
+      securityLevel: 'loose', // Allows external images if needed
+    };
+
+    mermaid.initialize(config);
+
+    try {
+      await mermaid.run({
+        querySelector: '.language-mermaid',
+        suppressErrors: true,
+      });
+    } catch (error) {
+      console.error('Error rendering Mermaid diagrams:', error);
+    }
+  });
+</script>
+{% endif %}
