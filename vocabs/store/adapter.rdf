@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:og="https://w3id.org/ontogen#" xmlns:oga="https://w3id.org/ontogen/store/adapter#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdfs:Class rdf:about="https://w3id.org/ontogen/store/adapter#Fuseki">
+    <rdfs:label>Fuseki store</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://w3id.org/ontogen/store/adapter#Oxigraph">
+    <rdfs:label>Oxigraph store</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/ontogen#Store"/>
+  </rdfs:Class>
+</rdf:RDF>

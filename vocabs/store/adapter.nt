@@ -1,0 +1,6 @@
+<https://w3id.org/ontogen/store/adapter#Fuseki> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ontogen/store/adapter#Fuseki> <http://www.w3.org/2000/01/rdf-schema#label> "Fuseki store" .
+<https://w3id.org/ontogen/store/adapter#Fuseki> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontogen#Store> .
+<https://w3id.org/ontogen/store/adapter#Oxigraph> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Class> .
+<https://w3id.org/ontogen/store/adapter#Oxigraph> <http://www.w3.org/2000/01/rdf-schema#label> "Oxigraph store" .
+<https://w3id.org/ontogen/store/adapter#Oxigraph> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <https://w3id.org/ontogen#Store> .

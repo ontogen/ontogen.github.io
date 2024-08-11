@@ -1,0 +1,34 @@
+[
+  {
+    "@id": "https://w3id.org/ontogen/store/adapter#Fuseki",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Fuseki store"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/ontogen#Store"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/ontogen/store/adapter#Oxigraph",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Oxigraph store"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/ontogen#Store"
+      }
+    ]
+  }
+]
