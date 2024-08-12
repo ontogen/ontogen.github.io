@@ -240,4 +240,4 @@ We then examined `og:Proposition`s, which serve as immutable, abstract sets of s
 
 Finally, we discussed how Ontogen implements commits through `og:Commit`s, which represent the actual application of `og:SpeechAct`s to the repository. We explored the challenges of ensuring reversibility in commits and how Ontogen addresses these through careful management of change sets.
 
-In the next article, we will expand our focus from the internal versioning mechanisms to the broader architecture of Ontogen. We'll explore how Ontogen organizes and manages repositories as DCAT catalogs and implements Ontogen instances as DCAT services.
+In the [next article](/introduction/part-3), we will expand our focus from the internal versioning mechanisms to the broader architecture of Ontogen. We'll explore how Ontogen organizes and manages repositories as DCAT catalogs and implements Ontogen instances as DCAT services.
