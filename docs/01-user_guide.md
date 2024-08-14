@@ -14,7 +14,7 @@ toc_sticky: true
 On macOS and Linux, the Ontogen CLI `og` can be installed using Homebrew:  
   
 ```sh  
-$ brew install ontogen/tap/ontogen  
+$ brew install ontogen/tap/ontogen
 ```  
   
 ### Manual installation  
@@ -109,7 +109,7 @@ $ tree .ontogen
     └── store.bog.ttl
 ```
 
-In `.ontogen/config/`, there are Bog configuration files used to configure the Ontogen service and its components and provide them with metadata. Bog is a special Turtle dialect developed for Ontogen configuration. It allows for simple and flexible specification of resources and their properties. In Bog files, RDF triples are used to define settings and metadata. The main features of Bog are the use of `:this` to reference the main resources an Ontogen service and `:I` to reference the current user.
+In `.ontogen/config/`, there are Bog configuration files used to configure the Ontogen service and its components and provide them with metadata. Bog is a special Turtle dialect developed for Ontogen configuration. It allows for simple and flexible specification of resources and their properties. In Bog files, RDF triples are used to define settings and metadata. The main features of Bog are the use of `:this` to reference the main resources an Ontogen service and `:I` to reference the current user. [This article](/introduction/part-4) describes Bog in more detail.
 
 In `agent.bog.ttl`, the user is configured, which is used for commits and other occasions when no other user is specified. At least the name and email address should be specified here, but any other metadata for this FOAF and PROV agent can also be defined.
 

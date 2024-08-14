@@ -119,7 +119,7 @@ While the same Ontogen repository can exist on different computers, the various 
 
 The main module `Ontogen` is a [GenServer](https://hexdocs.pm/elixir/GenServer.html) over such an `og:Service` as state, which executes the Ontogen operations on the repository specified therein, in the triple store specified therein.
 
-How exactly such an `og:Service` looks and is configured, especially its `og:Store` using triple store vendor-specific subclasses, will be the subject of the following and for the time last article in this series. This configuration is done in a special language specifically created for Ontogen, which needs to be introduced first.
+How exactly such an `og:Service` looks and is configured, especially its `og:Store` using triple store vendor-specific subclasses, will be the subject of the following and for the time [last article](/introduction/part-4) in this series. This configuration is done in a special language specifically created for Ontogen, which needs to be introduced first.
 
 
 ## Future developments
