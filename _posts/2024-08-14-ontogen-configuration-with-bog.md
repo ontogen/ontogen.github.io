@@ -9,6 +9,15 @@ header:
   image: /assets/images/ontogen-introduction-article-4.png
 mermaid: true
 ---
+This is the fourth and last post in a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
+
+1. [Introducing Ontogen](/introduction/part-1)
+2. [Ontogen's Versioning Model](/introduction/part-2)
+3. [Ontogen's Repository and Service Model](/introduction/part-3)
+4. **[Ontogen Configuration with Bog](/introduction/part-4)**
+
+---
+
 In the [previous article](/introduction/part-3), we explored the interpretation of `dcat:Catalog` and `dcat:DataService` concepts within the framework of Ontogen as a Data Control Management (DCM) system. Now, let's turn our attention to another crucial aspect: the configuration of Ontogen components.
 
 We've seen that an Ontogen service represents a concrete instantiation of a repository on a user's machine, consisting of the repository itself and its associated triple store. Configuring these components presents us with several challenges, particularly when it comes to naming and identifying resources.

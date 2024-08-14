@@ -17,7 +17,14 @@ These and other extensions will require fundamental changes that will likely inv
 
 In the coming weeks, I plan to publish the project's future roadmap. An application for another round of funding from the NLnet Foundation for at least one year is currently in progress.
 
-Ontogen offers some novel approaches to versioning RDF data (at least to my knowledge). To adequately explain these complex concepts, I will be publishing an article daily for the remainder of this week, to introduce the different parts of the system and the ideas behind them. In this first post, I'd like to introduce the technical foundations of Ontogen's approach to versioning RDF datasets.
+Ontogen offers some novel approaches to versioning RDF data (at least to my knowledge). To adequately explain these complex concepts, I have published a series of four blog posts, to introduce the different parts of the system and the ideas behind them:
+
+1. **[Introducing Ontogen](/introduction/part-1)**
+2. [Ontogen's Versioning Model](/introduction/part-2)
+3. [Ontogen's Repository and Service Model](/introduction/part-3)
+4. [Ontogen Configuration with Bog](/introduction/part-4)
+
+In this first post, I'd like to introduce the technical foundations of Ontogen's approach to versioning RDF datasets.
 
 ## Source Control Management vs. Data Control Management
 

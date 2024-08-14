@@ -6,6 +6,16 @@ permalink: /introduction/part-2
 header:
   image: /assets/images/ontogen-introduction-article-2.png
 ---
+
+This is the second post in a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
+
+1. [Introducing Ontogen](/introduction/part-1)
+2. **[Ontogen's Versioning Model](/introduction/part-2)**
+3. [Ontogen's Repository and Service Model](/introduction/part-3)
+4. [Ontogen Configuration with Bog](/introduction/part-4)
+
+---
+
 In the [previous article](/introduction/part-1) of our introduction series to Ontogen, we introduced RDF triple compounds (RTC). These triple compounds now serve as the foundation for Ontogen as a Data Control Management (DCM) system for RDF datasets. So, how exactly do the triple compounds used in Ontogen for versioning RDF datasets look?
 
 Ultimately, our goal is to annotate sets of statements with metadata to automatically organize them in a version history. However, the challenge with triple compounds is that the changes we want to make and commit atomically are not necessarily a simple set with a single semantic meaning. Instead, they are sets with different change semantics that can potentially occur simultaneously in any combination: sets of statements to be added to a dataset, updated, or deleted.
