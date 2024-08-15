@@ -7,7 +7,7 @@ header:
   image: /assets/images/ontogen-introduction-article-2.png
 ---
 
-This is the second post in a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
+This is the second in a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
 
 1. [Introducing Ontogen](/introduction/part-1)
 2. **[Ontogen's Versioning Model](/introduction/part-2)**

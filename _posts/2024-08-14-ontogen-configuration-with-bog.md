@@ -9,7 +9,7 @@ header:
   image: /assets/images/ontogen-introduction-article-4.png
 mermaid: true
 ---
-This is the fourth and last post in a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
+This is the fourth and last of a series of four blog posts introducing the different parts of the Ontogen version control system and the ideas behind it:
 
 1. [Introducing Ontogen](/introduction/part-1)
 2. [Ontogen's Versioning Model](/introduction/part-2)
