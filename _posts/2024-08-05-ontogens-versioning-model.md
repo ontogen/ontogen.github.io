@@ -160,7 +160,7 @@ In Ontogen, commits represent the actual changes made to a repository, resulting
 
 Like an `og:SpeechAct`, an `og:Commit` is a structure composed of `og:Proposition`s linked through various action properties. However, since they have a slightly different pragmatics here and a different `rdfs:domain`, different properties and an additional one are used for this purpose. The semantics of this set of properties is characterized by encoding repository-relative changes, i.e., expressing the minimal changes relative to the current state of the dataset. This is crucial to ensure that `og:Commit`s are revertible, as otherwise ambiguities in the history would arise:
 
-- Can we simply remove every statement added by a commit from the triple store during a revert? If we cannot assume minimal changesets, it cannot be automatically decided whether this deletion can be performed. If the statement already existed, it must be removed to reproduce the old state. If a statement already existed before, it must not be removed.
+- Can we simply remove every statement added by a commit from the triple store during a revert? If we cannot assume minimal changesets, it cannot be automatically decided whether this deletion can be performed. If the statement didn't already exist, it must be removed to reproduce the old state. If a statement already existed before, it must not be removed.
 - The same applies to removals of statements that do not actually exist in the current dataset and therefore should not be restored during a revert.
 - Additionally, the specific statements implicitly deleted by `og:update`s and `og:replace` must be explicitly recorded in an additional proposition so that they can be restored during a revert.
 
