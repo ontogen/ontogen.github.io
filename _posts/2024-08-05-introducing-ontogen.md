@@ -30,7 +30,7 @@ In this first post, I'd like to introduce the technical foundations of Ontogen's
 
 First, however, I'd like to take a step back and discuss the versioning problem with a particular focus on datasets. This distinct perspective is, to my knowledge, rarely taken, and in practice, software versioning solutions, i.e., SCMs like Git, are too often used for versioning datasets.
 
-Datasets, however, represent a indeed a different type of versioning object compared to software. While both datasets and software may ultimately always be text, no one would dispute the claim that data is not the same as software. But why then is there no popular versioning solution for datasets of structured data, especially in the age of "data as the new oil," where data management and analysis play central roles in almost all industries?
+Datasets, however, are a different type of versioning subject compared to software. While both datasets and software may ultimately always be text, no one would dispute the claim that data is not the same as software. But why then is there no popular versioning solution for datasets of structured data, especially in the age of "data as the new oil," where data management and analysis play central roles in almost all industries?
 
 Some examples illustrate the inadequacies of an SCM system as a Data Control Management (DCM) system:
 
@@ -41,7 +41,7 @@ Some examples illustrate the inadequacies of an SCM system as a Data Control Man
 
 Although increasing attention has been focused on the dataset versioning problem in recent years, it must be noted that no mainstream solution has yet emerged. Instead, SCMs are still too often resorted to for dataset versioning (if they are versioned at all).
 
-The situation is particularly precarious in the Knowledge Graph community, especially in the area of RDF data. Here, there is a lack of mature, specialized solutions for versioning.
+The situation is particularly precarious in the Knowledge Graph community. Here, there is a lack of mature, specialized solutions for versioning.
 
 
 ## Problems with Previous Versioning Systems for RDF
