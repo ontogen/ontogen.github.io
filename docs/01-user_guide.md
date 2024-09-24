@@ -84,9 +84,9 @@ $ og init --adapter STORE_ADAPTER
 Currently, Ontogen comes with only two supported adapters (more are planned):
 
 - `Fuseki`: [Apache Jena Fuseki](https://jena.apache.org/documentation/fuseki2/)
-- `Oxigraph`: [Oxigraph Server](https://crates.io/crates/oxigraph-server), which unfortunately has some known issues that currently limit its use with Ontogen and will hopefully be resolved in the future:
-    - [Datetime issue](https://github.com/oxigraph/oxigraph/issues/524): When storing XSD date specifications, trailing zeros for microseconds are truncated, resulting in a different representation than the original. This can lead to distorted results since the DateTime timestamps are also included in the hashing.
-    - [Inflated CONSTRUCT query results](https://github.com/oxigraph/oxigraph/issues/525): Due to massively duplicated triples in CONSTRUCT results, the performance of the corresponding Ontogen commands that use these is severely impaired.
+- `Oxigraph`: [Oxigraph](https://crates.io/crates/oxigraph-cli) 
+	- It is recommended to use version 0.4 or later, as these versions have resolved previous performance issues with CONSTRUCT queries. 
+	- However, there is still one known issue with Oxigraph that users should be aware of: When storing XSD date specifications, trailing zeros for microseconds are truncated, resulting in a different representation than the original. This can lead to distorted results since the DateTime timestamps are also included in the hashing. For more details, see the [Datetime issue](https://github.com/oxigraph/oxigraph/issues/524) on GitHub.)
 
 If no adapter is specified, the generic `og:Store` is used, where the endpoints must be configured manually.
 
