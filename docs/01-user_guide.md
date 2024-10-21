@@ -14,7 +14,8 @@ toc_sticky: true
 On macOS and Linux, the Ontogen CLI `og` can be installed using Homebrew:  
   
 ```sh  
-$ brew install ontogen/tap/ontogen
+$ brew tap ontogen/tap
+$ brew install ontogen
 ```  
   
 ### Manual installation  
