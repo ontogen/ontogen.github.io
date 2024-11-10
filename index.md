@@ -46,11 +46,12 @@ feature_row:
 ## Supported by
 
 <div style="display: flex; justify-content: center; align-items: center; margin-top: 30px; margin-bottom: 30px; flex-wrap: wrap;">
-  <a href="https://nlnet.nl/" style="margin: 40px;"><img src="https://nlnet.nl/logo/banner.svg" alt="NLnet Foundation Logo" style="max-width: 200px; height: auto;"></a>
-  <a href="https://nlnet.nl/assure" style="margin: 40px;"><img src="https://nlnet.nl/logo/NGI/NGIAssure.purpleblue.hex.svg" alt="NGI Assure Logo" style="max-width: 200px; height: 100px;"></a>
-  <a href="https://www.jetbrains.com/?from=RDF.ex" style="margin: 40px;"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains Logo" style="max-width: 140px; height: auto;"></a>
+  <a href="https://nlnet.nl/" style="margin: 40px;"><img src="https://nlnet.nl/logo/banner.svg" alt="NLnet Foundation Logo" style="max-width: 150px; height: auto;"></a>
+  <a href="https://nlnet.nl/assure" style="margin: 40px;"><img src="https://nlnet.nl/logo/NGI/NGIAssure.purpleblue.hex.svg" alt="NGI Assure Logo" style="max-width: 150px; height: 100px;"></a>
+  <a href="https://nlnet.nl/commonsfund/" style="margin: 40px;"><img src="https://nlnet.nl/image/logos/NGI0CommonsFund_tag.svg" alt="NGI0 Commons Logo" style="max-width: 150px; height: 100px;"></a>
+  <a href="https://www.jetbrains.com/?from=RDF.ex" style="margin: 40px;"><img src="https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg" alt="JetBrains Logo" style="max-width: 120px; height: auto;"></a>
 </div>
 
-This project is funded through [NGI Assure](https://nlnet.nl/assure), a fund established by [NLnet](https://nlnet.nl) with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program.
+This project is funded through [NGI Assure](https://nlnet.nl/assure) and [NGI0 Commons](https://nlnet.nl/commonsfund/) funds, established by [NLnet](https://nlnet.nl), with financial support from the European Commission's [Next Generation Internet](https://ngi.eu) program.
 
 [JetBrains](https://www.jetbrains.com/?from=RDF.ex) supports the project with complimentary access to its development environments.
