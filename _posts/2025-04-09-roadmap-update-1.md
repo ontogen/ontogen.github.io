@@ -31,3 +31,5 @@ Further planned library updates include:
 Some previously announced features, at least Sagas, will need to be deferred to a future development phase to accommodate this more fundamental work.
 
 While this represents a shift from the original roadmap, I strongly believe that the benefits of the planned comprehensive URI management outweigh the delay of other features.
+
+I'd like to express my sincere gratitude to the NLnet Foundation for their continued support, making all of this possible.
