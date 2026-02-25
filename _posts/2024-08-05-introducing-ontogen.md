@@ -1,6 +1,7 @@
 ---
 title: Introducing Ontogen
 date: 2024-08-08 10:00:00 +0200
+last_modified_at: 2026-02-25
 categories: [introduction, blog]
 permalink: /introduction/part-1
 header:
@@ -46,11 +47,29 @@ The situation is particularly precarious in the Knowledge Graph community. Here,
 
 ## Problems with Previous Versioning Systems for RDF
 
-Attempts to develop solutions for versioning RDF data have existed for a long time. Unfortunately, all solutions developed so far are either academic proof-of-concepts or approaches that have not found broader acceptance in the community for various reasons. In my opinion, a major reason for this is that most previous solutions had to rely on named graphs due to a lack of alternatives, which leads to numerous practical problems.
+Attempts to develop solutions for versioning RDF data have existed for a long time. Unfortunately, all solutions developed so far are either academic proof-of-concepts or approaches that have not found broader acceptance in the community for various reasons. To better understand why, I want to briefly survey the most significant approaches and the common limitations they share.
 
-The main problem with named graphs for versioning is that parts of a graph simply cannot be addressed directly. This forces us to create a separate named graph for every small group of triples we want to version, which can quickly lead to a flood of graphs and thus an unwieldy RDF dataset. This becomes particularly problematic when working with different named graphs for content purposes, which then become difficult to distinguish among this flood.
+### Named-graph-based approaches
 
-With RDF-star, which is currently being standardized as RDF 1.2, a new tool is now available. RDF-star is an extension of the RDF data model. It allows direct annotation of RDF triples by allowing triples to be used as subjects or objects in other triples. This simplifies the representation of metadata about statements and enables a more natural modeling of complex relationships without having to resort to reification or named graphs.
+The majority of previous RDF versioning systems relied on named graphs as their primary mechanism for organizing versioned data. [R43ples](https://github.com/plt-tud/r43ples) (Graube et al., 2014) acts as a SPARQL proxy that stores addition and deletion sets as separate named graphs for each revision. [Quit Store](https://aksw.org/Projects/Quit) (Arndt et al., 2018) maps each named graph to a file in a Git repository, delegating the actual versioning mechanics (history, branching, merging) to Git. [R&Wbase](https://ceur-ws.org/Vol-996/papers/ldow2013-paper-01.pdf) (Vander Sande et al., 2013) stores deltas as quads, again using named graphs to organize different changesets. Stardog offered a VCS feature using named graphs for its internal history database, but [removed it entirely in version 7.0](https://community.stardog.com/t/missing-versioning-documentation/1455).
+
+The main problem all of these approaches share is that parts of a graph simply cannot be addressed directly within the RDF model. This forces the creation of a separate named graph for every small group of triples that needs to be versioned or annotated with change metadata, which can quickly lead to a flood of graphs and thus an unwieldy RDF dataset. This becomes particularly problematic when named graphs are also used for content purposes, which then become difficult to distinguish among this flood. Even Quit Store, which elegantly avoids named graphs _as the versioning mechanism_ by delegating to Git, still depends on them _as the unit of granularity_ - one cannot version parts of a graph independently without splitting them into separate named graphs first.
+
+### Alternative approaches
+
+Other approaches tried to avoid the named graph problem through different mechanisms, but each came with its own significant trade-offs.
+
+Early systems like [SemVersion](https://www.researchgate.net/publication/228716298_Semversion_A_versioning_system_for_RDF_and_ontologies) (Völkel et al., 2005) and the [ChangeSet vocabulary](https://vocab.org/changeset/) (Tunnicliffe & Davis, 2005) used standard RDF reification to make individual triples addressable for change tracking. This solves the addressability problem but at severe cost: each described triple requires at least four additional triples, causing significant storage overhead and complex SPARQL queries with multiple joins per matched statement.
+
+Delta and patch-based approaches like [RDF Patch](https://jena.apache.org/documentation/rdf-patch/) (part of Apache Jena) provide compact change formats, but focus on change _logging_ and _replication_ rather than version _querying_ - there is no built-in way to query the state at version N or compute diffs between arbitrary versions.
+
+Archiving-focused systems like [OSTRICH](https://rdfostrich.github.io/article-jws2018-ostrich/) (Taelman et al., 2018) use sophisticated hybrid storage strategies for efficient versioned queries over large RDF archives. However, their linear storage model is optimized for archival query scenarios rather than the collaborative workflows (branching, merging, provenance tracking) that a Data Control Management system requires.
+
+At the HTTP/resource level, the [Memento](https://www.rfc-editor.org/rfc/rfc7089) protocol (RFC 7089) and [TailR](https://dl.acm.org/doi/10.1145/2814864.2814875) (Meinhardt et al., 2015) provide temporal access to Linked Data resources, but operate at the document level with no triple-level awareness.
+
+### RDF-star as a new foundation
+
+With RDF-star, which is currently being standardized as RDF 1.2, a new tool is now available that addresses the fundamental addressability problem without the overhead of reification or the constraints of named graphs. RDF-star is an extension of the RDF data model that allows direct annotation of RDF triples by allowing triples to be used as subjects or objects in other triples. This simplifies the representation of metadata about statements and enables a more natural modeling of complex relationships without having to resort to reification or named graphs.
 
 The possibility of making RDF-star meta-statements with other statements as the subject opens up significant new possibilities. In particular, it is now trivial to define virtual, URI-identifiable sets of statements, i.e., partial graphs within a graph, by assigning the statement to a common resource using a property. This makes RDF-star an ideal foundation for versioning RDF graphs.
 
@@ -188,3 +207,6 @@ The RTC property to be used can be configured either globally via application co
 In this article, we have laid the foundations for Ontogen's approach to versioning RDF datasets. We have discussed the inadequacies of existing solutions and introduced RDF Triple Compounds (RTC) as the technical basis of Ontogen. RTC utilizes the capabilities of RDF-star to enable flexible and efficient groupings of RDF triples without having to accept the disadvantages of named graphs.
 
 In the [next article](/introduction/part-2), we will take a closer look at the application of RTC in Ontogen. We will show how RTC compounds serve as building blocks for a versioning system that takes into account the various roles and aspects of data management. We will explain how Ontogen uses RTC to enable fine-grained version control while maintaining the clarity of the dataset.
+
+---
+> Updated February 2026: Added a survey of specific previous RDF versioning approaches in the "[Problems with Previous Versioning Systems for RDF](#problems-with-previous-versioning-systems-for-rdf)" section.
